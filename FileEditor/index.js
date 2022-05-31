@@ -5,8 +5,10 @@
 
 
 const fs = require('fs');
+const path = require('fs')
 
 const type = process.argv[2];
+
 
 
 
@@ -38,12 +40,21 @@ if(type === 'create'){
     })
 
 }
+
 if(type === 'rename'){
+ 
    fs.renameSync(process.argv[3],process.argv[4], (error) => {
        console.log(error)
    } );
-
-   fs.Fil
-
 }
+
+
+if(type === 'list'){
+   
+   fs.readdir('.', (error ,files) => {
+       console.log(files)
+
+   })
+}
+
 
