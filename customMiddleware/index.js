@@ -11,22 +11,22 @@ function customValidation(req,res,next){
     const {id, name, rating,Description, Genre , Cast} = req.body;
     console.log(typeof(id))
     if(!id || typeof(id) !== 'number' ){
-        res.status(401).send('Id is not Number or it doesnot exist');
+        res.status(400).send('Id is not Number or it doesnot exist');
     }
     else if(!name || typeof(name) !== 'string') {
-        res.status(401).send('Name is not String or it doesnot exist');
+        res.status(400).send('Name is not String or it doesnot exist');
     }
     else if(!rating || typeof(rating) !== 'number') {
-        res.status(401).send('Rating is not Number or it doesnot exist');
+        res.status(400).send('Rating is not Number or it doesnot exist');
     }
     else if(!Description || typeof(Description) !== 'string') {
-        res.status(401).send('Description is not String or it doesnot exist');
+        res.status(400).send('Description is not String or it doesnot exist');
     }
     else if(!Genre || typeof(Genre) !== 'string') {
-        res.status(401).send('Genre is not String or it doesnot exist');
+        res.status(400).send('Genre is not String or it doesnot exist');
     }
     else if(!Cast || typeof(Cast) !== 'string'){
-        res.status(401).send('Cast is not String or it doesnot exist'); 
+        res.status(400).send('Cast is not String or it doesnot exist'); 
     }
     next();
 
